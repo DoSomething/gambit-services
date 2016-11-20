@@ -1,0 +1,4 @@
+[submodule "gambit"]
+	path = gambit
+	url = https://github.com/DoSomething/gambit.git
+	branch = master
