@@ -20,6 +20,7 @@ services:
     links:
       - mongo
     environment:
+      - PORT=10000
       - MONGODB_URI=mongodb://mongo_1:27017/messaging-groups-api
       - API_KEY=abcd123
     volumes:
