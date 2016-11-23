@@ -2,3 +2,7 @@
 	path = gambit
 	url = https://github.com/DoSomething/gambit.git
 	branch = master
+[submodule "messaging-groups-api"]
+	path = messaging-groups-api
+	url = https://github.com/DoSomething/messaging-groups-api
+	branch = master

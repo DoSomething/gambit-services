@@ -5,10 +5,25 @@ services:
     build: ./gambit
     links:
       - mongo
+      - messaging-groups-api
     environment:
       - DB_URI=mongodb://mongo_1:27017/gambit
+      - DS_MESSAGING_GROUPS_API_BASEURI=localhost:10000/api/v1
+      - DS_MESSAGING_GROUPS_API_KEY=abcd123
     volumes:
       - ./gambit/:/app
+
+  messaging-groups-api:
+    build: ./messaging-groups-api
+    ports:
+      - "10000:10000"
+    links:
+      - mongo
+    environment:
+      - MONGODB_URI=mongodb://mongo_1:27017/messaging-groups-api
+      - API_KEY=abcd123
+    volumes:
+      - ./messaging-groups-api/:/app
 
   rabbitmq:
     image: rabbitmq:latest
