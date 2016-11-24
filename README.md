@@ -34,6 +34,7 @@ ${service-name}:
     - RABBIT_URI=amqp://rabbitmq_1:5672/dosomething
   volumes:
     - ./${service-name}/:/app
+    - /app/node_modules
 ```
 
 **note:** Some groups require links between services, in that case simply define a link between the two names & set the environment variables. See gambit & messaging-groups as an example.

@@ -12,6 +12,7 @@ services:
       - DS_MESSAGING_GROUPS_API_KEY=abcd123
     volumes:
       - ./gambit/:/app
+      - /app/node_modules
 
   messaging-groups-api:
     build: ./messaging-groups-api
@@ -25,6 +26,7 @@ services:
       - API_KEY=abcd123
     volumes:
       - ./messaging-groups-api/:/app
+      - /app/node_modules
 
   rabbitmq:
     image: rabbitmq:latest
